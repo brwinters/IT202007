@@ -1,0 +1,16 @@
+<?php
+$myArray = array(1,2,3,4,3,4,5,6,7,8);
+
+echo "Even numbers in the array are below<br>";
+$count = 0;
+for ($x = 0; $x < sizeof($myArray); $x++) {
+$tmp = $myArray[$x];
+if ($tmp%2==0){
+   echo "$tmp <br>";
+$count +=1;
+}
+}
+echo ("Even count : ");
+echo ($count);
+
+?>
