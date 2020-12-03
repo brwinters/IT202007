@@ -24,7 +24,7 @@ if(isset($_POST["register"])){
     $confirm = $_POST["confirm"];
   }
   $isValid = true;
-  //check if passwords match on the server side
+
   if($password == $confirm){
     echo "Passwords match <br>"; 
   }
@@ -35,10 +35,9 @@ if(isset($_POST["register"])){
   if(!isset($email) || !isset($password) || !isset($confirm)){
    $isValid = false; 
   }
-  //TODO other validation as desired, remember this is the last line of defense
+  
   if($isValid){
-    //for password security we'll generate a hash that'll be saved to the DB instead of the raw password
-    //for this sample we'll show it instead
+    
     $hash = password_hash($password, PASSWORD_BCRYPT);
     echo "<br>Our hash: $hash<br>";
     echo "User registered (not really since we don't have a database setup yet)"; 
