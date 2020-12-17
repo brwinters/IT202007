@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS F20_Questions
     created   TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     survey_id int,
     primary key (id),
-    FOREIGN KEY (survey_id) REFERENCES F20_Surveys (id)
+    FOREIGN KEY (survey_id) REFERENCES Survey (id)
 )
