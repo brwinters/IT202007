@@ -40,7 +40,6 @@
         </div>
     </div>
 <?php require(__DIR__ . "/../partials/flash.php");
-<?php
 //we'll be including this on most/all pages so it's a good place to include anything else we want on those pages
 require_once(__DIR__ . "/../lib/helpers.php");
 ?>
