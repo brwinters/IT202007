@@ -26,8 +26,8 @@
 <?php
 if (isset($_POST["save"])) {
     //TODO add proper validation/checks
-    $Title = $_POST["title"];
-    $Description = $_POST["description"];
+    $Title = $_POST["Title"];
+    $Description = $_POST["Description"];
     $Status = $_POST["status"];
     $nst = date('Y-m-d H:i:s');//calc
     $user = get_user_id();
