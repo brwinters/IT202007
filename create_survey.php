@@ -1,6 +1,6 @@
 <?php require_once(__DIR__ . "/partials/nav.php"); ?>
 <div class="container-fluid">
-        <h2>Create Survey</h2>
+        <h3>Create Survey</h3>
         <form method="POST">
             <div class="form-group">
                 <label>Title</label>
