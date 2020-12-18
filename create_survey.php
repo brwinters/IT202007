@@ -32,7 +32,7 @@ if (isset($_POST["save"])) {
     $nst = date('Y-m-d H:i:s');//calc
     $user = get_user_id();
     $db = getDB();
-    $stmt = $db->prepare("INSERT INTO Survey (title, description, user_id) VALUES(:name, :user)");
+    $stmt = $db->prepare("INSERT INTO Survey (title, description) VALUES(:name, :user)");
     $r = $stmt->execute([
         ":name" => $name,
         ":user" => $user
