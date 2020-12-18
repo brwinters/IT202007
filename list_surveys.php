@@ -104,7 +104,7 @@ require_once(__DIR__ . "/../lib/helpers.php");
         <span class="navbar-text">Balance: <?php echo getBalance(); ?></span>
     </nav>
 </div>
-    <?php
+<?php
 /*put this at the bottom of the page so any templates
  populate the flash variable and then display at the proper timing*/
 ?>
