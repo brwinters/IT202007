@@ -4,12 +4,12 @@
         <form method="POST">
             <div class="form-group">
                 <label>Title</label>
-                <input class="form-control" name="Title" placeholder="Title"/>
+                <input class="form-control" name="name" placeholder="Title"/>
             </div>
              <form method="POST">
             <div class="form-group">
                 <label>Description</label>
-                <input class="form-control" name="Description" placeholder="Description"/>
+                <input class="form-control" name="name" placeholder="Description"/>
             </div>
             <div class="form-group">
                 <label>Status</label>
