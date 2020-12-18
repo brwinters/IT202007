@@ -1,5 +1,4 @@
 <?php require_once(__DIR__ . "/partials/nav.php"); ?>
-?>
 <div class="container-fluid">
         <h3>Create Survey</h3>
         <form method="POST">
