@@ -21,7 +21,9 @@
                     
                 </select>
             </div>
-          
+          <input class="btn btn-primary" type="submit" name="save" value="Create"/>
+        </form>
+    </div>
 <?php
 if (isset($_POST["save"])) {
     //TODO add proper validation/checks
