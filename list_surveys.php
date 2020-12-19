@@ -55,4 +55,5 @@ if (isset($_POST["search"]) && !empty($query)) {
             <?php endif; ?>
         </div>
     </div>
+<?php 
 flash("original message" . var_export($stmt->errorInfo(),true));
