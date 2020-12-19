@@ -1,5 +1,5 @@
 
-<?php require_once(__DIR__ . "/../partials/nav.php"); ?>
+<?php require_once(__DIR__ . "/partials/nav.php"); ?>
 <?php
 //we'll put this at the top so both php block have access to it
 if (isset($_GET["id"])) {
@@ -52,4 +52,4 @@ if (isset($id)) {
 	Enter a question: <INPUT TYPE = 'TEXT' Name ='question'  value="What is the Question?"  maxlength="40">
 
 	<INPUT TYPE = "Submit" Name = "Sub1"  VALUE = "Set this Question">
-<?php require(__DIR__ . "/../partials/flash.php");
+<?php require(__DIR__ . "/partials/flash.php");
