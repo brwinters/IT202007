@@ -21,7 +21,7 @@ if (isset($_POST["search"]) && !empty($query)) {
     <div class="container-fluid">
         <h3>List Surveys</h3>
         <form method="POST" class="form-inline">
-            <input class="form-control" title="query" placeholder="Search" value="<?php safer_echo($query); ?>"/>
+            <input class="form-control" name="query" placeholder="Search" value="<?php safer_echo($query); ?>"/>
             <input class="btn btn-primary" type="submit" value="Search" title="search"/>
         </form>
         <div class="results">
