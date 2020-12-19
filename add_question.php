@@ -11,7 +11,7 @@ if (isset($id)) {
  $stmt = $db->prepare("INSERT INTO Survey (title, description) VALUES(:name, :user)");
    }
 ?>
-   <FORM NAME ="form1" METHOD ="GET" ACTION ="setQuestion.php">
+   <FORM NAME ="form1" METHOD =$_POST
 	Enter a question: <INPUT TYPE = 'TEXT' Name ='question'  value="What is the Question?"  maxlength="40">
 
 
