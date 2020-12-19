@@ -1,4 +1,23 @@
 <?php require_once(__DIR__ . "/../partials/nav.php"); ?>
+
+<?php
+$query = "";
+$results = [];
+if (isset($_POST["query"])) {
+    $query = $_POST["query"];
+}
+if (isset($_POST["search"]) && !empty($query)) {
+    $db = getDB();
+    $stmt = $db->prepare("SELECT name,description,status, user_id from Survey WHERE name like :q LIMIT 10");
+    $r = $stmt->execute([":q" => "%$query%"]);
+    if ($r) {
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    else {
+        flash("There was a problem fetching the results");
+    }
+}
+?>
     <div class="container-fluid">
         <h3>List Surveys</h3>
         <form method="POST" class="form-inline">
