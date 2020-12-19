@@ -8,7 +8,7 @@ if (isset($_POST["query"])) {
 }
 if (isset($_POST["search"]) && !empty($query)) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT name,description,status, user_id from Survey WHERE name like :q LIMIT 10");
+    $stmt = $db->prepare("SELECT title,description,status, user_id from Survey WHERE name like :q LIMIT 10");
     $r = $stmt->execute([":q" => "%$query%"]);
     if ($r) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -22,7 +22,7 @@ if (isset($_POST["search"]) && !empty($query)) {
         <h3>List Surveys</h3>
         <form method="POST" class="form-inline">
             <input class="form-control" name="query" placeholder="Search" value="<?php safer_echo($query); ?>"/>
-            <input class="btn btn-primary" type="submit" value="Search" name="search"/>
+            <input class="btn btn-primary" type="submit" value="Search" title="search"/>
         </form>
         <div class="results">
             <?php if (count($results) > 0): ?>
@@ -32,7 +32,7 @@ if (isset($_POST["search"]) && !empty($query)) {
                             <div class="row">
                                 <div class="col">
                                     <div>Name:</div>
-                                    <div><?php safer_echo($r["name"]); ?></div>
+                                    <div><?php safer_echo($r["title"]); ?></div>
                                 </div>
                              div class="col">
                                     <div>Name:</div>
