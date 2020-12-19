@@ -22,7 +22,7 @@ if (isset($_POST["search"]) && !empty($query)) {
         <h3>List Surveys</h3>
         <form method="POST" class="form-inline">
             <input class="form-control" name="query" placeholder="Search" value="<?php safer_echo($query); ?>"/>
-            <input class="btn btn-primary" type="submit" value="Search" title="search"/>
+            <input class="btn btn-primary" type="submit" value="Search" name="search"/>
         </form>
         <div class="results">
             <?php if (count($results) > 0): ?>
