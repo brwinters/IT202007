@@ -14,7 +14,7 @@ if (isset($_POST["search"]) && !empty($query)) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     else {
-        flash("There was a problem fetching the results");
+        flash("original message" . var_export($stmt->errorInfo(),true));
     }
 }
 ?>
@@ -56,4 +56,4 @@ if (isset($_POST["search"]) && !empty($query)) {
         </div>
     </div>
 <?php 
-flash("original message" . var_export($stmt->errorInfo(),true));
+<?php require(__DIR__ . "/partials/flash.php");
