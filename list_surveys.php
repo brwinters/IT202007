@@ -8,7 +8,7 @@ if (isset($_POST["query"])) {
 }
 if (isset($_POST["search"]) && !empty($query)) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT title,description,status, user_id from Survey WHERE title like :q LIMIT 10");
+    $stmt = $db->prepare("SELECT title,description,visibility, user_id from Survey WHERE title like :q LIMIT 10");
     $r = $stmt->execute([":q" => "%$query%"]);
     if ($r) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@ if (isset($_POST["search"]) && !empty($query)) {
                                 </div>
                                 <div class="col">
                                     <div>State:</div>
-                                    <div><?php getState($r["status"]); ?></div>
+                                    <div><?php getState($r["visibility"]); ?></div>
                                 </div>                  
                                 <div class="col">
                                     <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
