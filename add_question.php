@@ -1,6 +1,6 @@
 <?php require_once(__DIR__ . "/partials/nav.php"); ?>
 <?php
-$survey_id = -1
+$survey_id = -1;
 if (isset($_GET["id"])) {
     $survey_id = $_GET["id"];
 }
