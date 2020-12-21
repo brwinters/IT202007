@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
 	   }
 	   ?>
 <form method="POST">
-	<input name="questions"/>
+	<input name="question"/>
 	<input type="submit" name="submit"/>
 	<form>
 <?php require(__DIR__ . "/partials/flash.php");
