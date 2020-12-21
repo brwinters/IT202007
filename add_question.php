@@ -7,8 +7,8 @@ if (isset($_GET["id"])) {
 
 if (isset($_POST["submit"])) {
 	$question = $_POST["question"];
-	if(!empty(question) && $survey_id > -1
- $stmt = $db->prepare("INSERT INTO Questions (surevy_id, question) VALUES(:sid, :q)";
+	if(!empty(question) && $survey_id > -1){
+ $stmt = $db->prepare("INSERT INTO Questions (surevy_id, question) VALUES(:sid, :q)");
 	$r = $stmt->execute ([":sid"=>$survey_id, ":q"=>$question]);
 	   if($r){
 		   flash("Question created");
@@ -26,5 +26,4 @@ if (isset($_POST["submit"])) {
 	<input name="questions"/>
 	<input type="submit" name="submit"/>
 	<form>
-  
 <?php require(__DIR__ . "/partials/flash.php");
