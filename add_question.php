@@ -8,6 +8,7 @@ if (isset($_GET["id"])) {
 if (isset($_POST["submit"])) {
 	$question = $_POST["question"];
 	if(!empty($question) && $survey_id > -1){
+	$db = getDB();
  $stmt = $db->prepare("INSERT INTO F20_Questions (surevy_id, question) VALUES(:sid, :q)");
 	$r = $stmt->execute ([":sid"=>$survey_id, ":q"=>$question]);
 	   if($r){
