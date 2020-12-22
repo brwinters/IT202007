@@ -29,7 +29,7 @@ $survey_id = $_GET["id"];
                                 </div>
                    </div>                  
                                 <div class="col">
-                                    <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
+                                    <a type="button" href="add_answers.php?id=<?php safer_echo($r['id']); ?>">Add</a>
                       </div>
                         </div>
                     <?php endforeach; ?>
