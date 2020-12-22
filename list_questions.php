@@ -26,23 +26,7 @@ $survey_id = $_GET["id"];
                         <div class="list-group-item">
                             <div class="row">
                                
-                                    <div>Title:</div>
-                                    <div><?php safer_echo($r["title"]); ?></div>
-                                </div>
-                             div class="col">
-                                    <div>Question:</div>
-                                    <div><?php safer_echo($r["Question"]); ?></div>
-                                </div>
-                                <div class="col">
-                                    <div>State:</div>
-                                    <div><?php getState($r["visibility"]); ?></div>
-                                </div>                  
-                                <div class="col">
-                                    <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
-                                    <a type="button" href="view_survey.php?id=<?php safer_echo($r['id']); ?>">View</a>
-                                </div>
-                            </div>
-                        </div>
+
                     <?php endforeach; ?>
                 </div>
             <?php else: ?>
