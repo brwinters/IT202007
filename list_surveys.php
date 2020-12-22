@@ -34,7 +34,6 @@ if (isset($_POST["search"]) && !empty($query)) {
                                     <div>Title:</div>
                                     <div><?php safer_echo($r["title"]); ?></div>
                                 </div>
-                             div class="col">
                                     <div>Description:</div>
                                     <div><?php safer_echo($r["description"]); ?></div>
                                 </div>
