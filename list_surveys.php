@@ -44,6 +44,7 @@ if (isset($_POST["search"]) && !empty($query)) {
                                 </div>                  
                                 <div class="col">
                                     <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
+                                    <a type="button" href="list_questions.php?id=<?php safer_echo($r['id']); ?>">Questions</a>
                                     <a type="button" href="view_survey.php?id=<?php safer_echo($r['id']); ?>">View</a>
                                 </div>
                             </div>
