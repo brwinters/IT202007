@@ -28,7 +28,7 @@ $survey_id = $_GET["id"];
                                     <div>Question:</div>
                                     <div><?php safer_echo($r["question"]); ?></div>
                                 </div>
-                    </div>                  
+                   </div>                  
                                 <div class="col">
                                     <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
                       </div>
