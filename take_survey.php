@@ -9,9 +9,9 @@ if (isset($_GET["id"])) {
 $results = [];
 if (isset($id)) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT id,question,answer, FROM Questions JOIN Answers ON answer.question_id WHERE survey_id = :id");
-    $r = $stmt->execute([":id" => $survey_id]);
-    $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+    $stmt = $db->prepare("SELECT id,question,answer, FROM F20_Questions JOIN Answers ON F20_Answers.question_id = F20_Questions.id WHERE survey_id = :id");
+    $r = $stmt->execute([":id" => $id]);
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (!$results) {
         $e = $stmt->errorInfo();
         flash($e[2]);
