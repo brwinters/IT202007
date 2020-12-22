@@ -28,7 +28,7 @@ if (isset($id)) {
                         <div class="list-group-item">
                                     <div>Question:</div>
                                     <div><?php safer_echo($r["question"]); ?></div>
-                                </div>
+                                </div> 
                         </div>
                     <?php endforeach; ?>
                 </div>
