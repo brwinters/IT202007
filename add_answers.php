@@ -3,10 +3,6 @@
 $question_id = -1;
 if (isset($_GET["id"])) {
     $question_id = $_GET["id"];
-    $answerA = $_GET['AnswerA'];
-	$answerB = $_GET['AnswerB'];
-	$answerC = $_GET['AnswerC'];
-
 }
 
 if (isset($_POST["submit"])) {
@@ -28,15 +24,7 @@ if (isset($_POST["submit"])) {
 	   }
 	   ?>
 <form method="POST">
-	Answe A: <input name="answerA"/>
-	<input type="submit" name="submit"/>
-	<form>
-    <form method="POST">
-	Answer B: <input name="answerB"/>
-	<input type="submit" name="submit"/>
-	<form>
-    <form method="POST">
-	Answer C: <input name="answerC"/>
+	Answe A: <input name="answer"/>
 	<input type="submit" name="submit"/>
 	<form>
 <?php require(__DIR__ . "/partials/flash.php");
