@@ -31,6 +31,10 @@ if (isset($id)) {
                                 </div> 
                         </div>
                     <?php endforeach; ?>
-                </div>
-  </div>
+                 </div>
+            <?php else: ?>
+                <p>No results</p>
+            <?php endif; ?>
+        </div>
+    </div>
 <?php require(__DIR__ . "/partials/flash.php");
