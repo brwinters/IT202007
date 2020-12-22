@@ -19,22 +19,17 @@ if (isset($id)) {
 }
 ?>
     <h3>Take Survey</h3>
-<?php if (isset($result) && !empty($result)): ?>
-    <div class="card">
-        <div class="card-title">
-            <?php safer_echo($result["name"]); ?>
-        </div>
-        <div class="card-body">
-            <div>
-                <p>Stats</p>
-                <div>Title: <?php safer_echo($result["title"]); ?></div>
-                <div>Description: <?php safer_echo($result["description"]); ?></div>
-                <div>Status: <?php getState($result["status"]); ?></div>
-
-            </div>
-        </div>
-    </div>
-<?php else: ?>
-    <p>Error looking up id...</p>
-<?php endif; ?>
+<form method="POST" class="form-inline">
+        </form>
+        <div class="results">
+            <?php if (count($results) > 0): ?>
+                <div class="list-group">
+                    <?php foreach ($results as $r): ?>
+                        <div class="list-group-item">
+                                    <div>Question:</div>
+                                    <div><?php safer_echo($r["question"]); ?></div>
+                                </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
 <?php require(__DIR__ . "/partials/flash.php");
