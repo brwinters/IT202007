@@ -6,13 +6,13 @@ if (isset($_GET["id"])) {
 ?>
 <?php
 //fetching
-$result = [];
+$results = [];
 if (isset($id)) {
     $db = getDB();
     $stmt = $db->prepare("SELECT id,question,answer, FROM Questions JOIN Answers ON answer.question_id WHERE survey_id = :id");
     $r = $stmt->execute([":id" => $survey_id]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$result) {
+    $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+    if (!$results) {
         $e = $stmt->errorInfo();
         flash($e[2]);
     }
