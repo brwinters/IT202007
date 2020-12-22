@@ -10,7 +10,7 @@ $result = [];
 if (isset($id)) {
     $db = getDB();
     $stmt = $db->prepare("SELECT survey.id,title,description,question_id,answer_id, user_id, Users.username FROM Survey as Survey JOIN Users on Survey.user_id = Users.id where Survey.id = :id");
-    $r = $stmt->execute([":id" => $id]);
+    $r = $stmt->execute([":id" => $survey_id]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     if (!$result) {
         $e = $stmt->errorInfo();
@@ -18,7 +18,7 @@ if (isset($id)) {
     }
 }
 ?>
-    <h3>Test Survey</h3>
+    <h3>Take Survey</h3>
 <?php if (isset($result) && !empty($result)): ?>
     <div class="card">
         <div class="card-title">
