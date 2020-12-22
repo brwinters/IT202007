@@ -3,20 +3,17 @@
 <?php
 $query = "";
 $results = [];
-if (isset($_POST["query"])) {
-    $query = $_POST["query"];
-}
-if (isset($_POST["search"]) && !empty($query)) {
+$survey_id = $_GET["id"];
+
     $db = getDB();
-    $stmt = $db->prepare("SELECT id,title,question,visibility user_id from Survey WHERE title like :q LIMIT 10");
-    $r = $stmt->execute([":q" => "%$query%"]);
+    $stmt = $db->prepare("SELECT id,question, from F20_Questions WHERE survey_id = :id ");
+    $r = $stmt->execute([":id" => $survey_id]);
     if ($r) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     else {
         flash("original message" . var_export($stmt->errorInfo(),true));
     }
-}
 ?>
     <div class="container-fluid">
         <h3>List Questions</h3>
