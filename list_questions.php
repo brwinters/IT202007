@@ -24,9 +24,15 @@ $survey_id = $_GET["id"];
                 <div class="list-group">
                     <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
-                            <div class="row">
-                               
-
+                             div class="row">
+                                    <div>Question:</div>
+                                    <div><?php safer_echo($r["question"]); ?></div>
+                                </div>
+                    </div>                  
+                                <div class="col">
+                                    <a type="button" href="add_question.php?id=<?php safer_echo($r['id']); ?>">Add</a>
+                      </div>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             <?php else: ?>
