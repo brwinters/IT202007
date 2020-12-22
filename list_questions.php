@@ -6,7 +6,7 @@ $results = [];
 $survey_id = $_GET["id"];
 
     $db = getDB();
-    $stmt = $db->prepare("SELECT id,question, from F20_Questions WHERE survey_id = :id ");
+    $stmt = $db->prepare("SELECT id,question from F20_Questions WHERE survey_id = :id ");
     $r = $stmt->execute([":id" => $survey_id]);
     if ($r) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
