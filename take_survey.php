@@ -69,5 +69,4 @@ if (isset($id)) {
  <input type="submit" value="submit" name="submit">
 </form>
 <body>
-
 <?php require(__DIR__ . "/partials/flash.php");
