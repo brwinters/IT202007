@@ -9,7 +9,7 @@ if (isset($_GET["id"])) {
 $results = [];
 if (isset($id)) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT F20_Questions.id,F20_Answers.id,question,answer FROM F20_Questions JOIN F20_Answers ON F20_Answers.question_id = F20_Questions.id WHERE survey_id = :id");
+    $stmt = $db->prepare("SELECT F20_Answers.id as answer_id F20_Questions.id,F20_Answers.id,question,answer FROM F20_Questions JOIN F20_Answers ON F20_Answers.question_id = F20_Questions.id WHERE survey_id = :id");
     $r = $stmt->execute([":id" => $id]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (!$results) {
@@ -42,7 +42,7 @@ if (isset($id)) {
                      <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                         <div>Answers:</div>
-                    <input> type="radio" <div><?php safer_echo($r["answer"]); ?></div>
+                    <input type="radio" value="<?php echo $r["answer_id"];?>" name="answer"/><?php echo $r["answer"];?>
                                 </div> 
 		      
                         </div>
