@@ -42,7 +42,7 @@ if (isset($id)) {
                      <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                         <div>Answers:</div>
-                    <input type="radio" <div><?php safer_echo($r["answer"]); ?></div>
+                    <input> type="radio" <div><?php safer_echo($r["answer"]); ?></div>
                                 </div> 
 		      
                         </div>
@@ -55,7 +55,7 @@ if (isset($id)) {
     </div>
 <body>
 	</form>
- <input type="submit" value="Submit">
+ <input type="submit" value="answer.id">
 </form>
 <body>
 
