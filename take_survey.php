@@ -41,7 +41,6 @@ if (isset($id)) {
 ?>
     <h3>Take Survey</h3>
 <form method="POST" class="form-inline">
-        </form>
         <div class="results">
             <?php if (count($results) > 0): ?>
                 <div class="list-group">
