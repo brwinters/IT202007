@@ -1,6 +1,5 @@
 <?php require_once(__DIR__ . "/partials/nav.php"); ?>
 
-}
 ?>
 <?php
 //get latest 10 surveys we haven't take
