@@ -5,17 +5,9 @@ if (isset($_POST["submit"])) {
     $survey_id = $_GET["id"];
     $user_id = get_user_id();
     $params = [];
-    $query = "INSERT INTO F20_Responses (survey_id, question_id, answer_id, user_id) VALUES";//ignore sql error hint
-    $i = 0;//can't use $key here since it presents a question_id and will always be > 0, so using a temp var to count
-    foreach ($_POST as $key => $item) {
-        if (is_numeric($key)) {
-            //assuming this is question id
-            //assuming value is answer id
-            if ($i > 0) {
-                $query .= ",";
-	    }
-	}
-    }
+    $query = "INSERT INTO F20_Responses (survey_id, question_id, answer_id, user_id) VALUES (:survey_id, :question_id, :answer_id, :user_id");//ignore sql error hint
+  $params[":survey_id"] = $survey_id;
+
     $db = getDB();
     $stmt = $db->prepare($query);
     $r = $stmt->execute($params);
