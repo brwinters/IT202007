@@ -61,7 +61,7 @@ if (isset($id)) {
                                 </div> 
 		          </div>                  
                                 <div class="col">
-                                    <a type="button" href="list_questions.php?id=<?php safer_echo($r['id']); ?>">Questions</a>
+                                    <a type="button" href="list_survey.php?id=<?php safer_echo($r['id']); ?>">Survey</a>
                       </div>
                         </div>
                     <?php endforeach; ?>
