@@ -13,6 +13,8 @@ if (isset($_POST["submit"])) {
             //assuming value is answer id
             if ($i > 0) {
                 $query .= ",";
+	    }
+	}
     }
     $db = getDB();
     $stmt = $db->prepare($query);
