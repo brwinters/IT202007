@@ -44,8 +44,7 @@ if (isset($id)) {
                                         <div>Answers:</div>
                     <input type="radio" <div><?php safer_echo($r["answer"]); ?></div>
                                 </div> 
-		       <input type="submit" value="Submit">
-
+		      
                         </div>
                     <?php endforeach; ?>
                  </div>
@@ -54,7 +53,10 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
+<body>
+	</form>
+ <input type="submit" value="Submit">
 </form>
-
+<body>
 
 <?php require(__DIR__ . "/partials/flash.php");
