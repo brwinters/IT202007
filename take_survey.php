@@ -13,15 +13,7 @@ if (isset($_POST["submit"])) {
             //assuming value is answer id
             if ($i > 0) {
                 $query .= ",";
-            }
-            $query .= "(:sid, :q$i, :a$i, :uid)";
-            $params[":q$i"] = $key;
-            $params[":a$i"] = $item;
-        }
-        $i++;
     }
-    $params[":sid"] = $survey_id;
-    $params[":uid"] = $user_id;
     $db = getDB();
     $stmt = $db->prepare($query);
     $r = $stmt->execute($params);
@@ -63,7 +55,7 @@ if (isset($id)) {
                     <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                     <div>Question:</div>
-                             <input type="hidden" name="question_id" value="<?php echo $r["question_id"];?>"/>
+                             <input type="hidden" name="question_id" value="<?php echo $r["question_id"];?>"/> <div><?php safer_echo($r["question"]); ?></div>
                                 </div> 
                      <?php endforeach; ?>
                      <?php foreach ($results as $r): ?>
