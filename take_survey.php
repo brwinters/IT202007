@@ -12,11 +12,12 @@ if (isset($_POST["submit"])) {
     $r = $stmt->execute($params);
     if ($r) {
         flash("Answers have been recorded", "success");
+	    
+    die(header("Location: " . getURL("surveys.php")));
     }
     else {
         flash("There was an error recording your answers: " . var_export($stmt->errorInfo(), true), "danger");
     }
-    die(header("Location: " . getURL("surveys.php")));
 }
 ?>
 
