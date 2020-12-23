@@ -29,20 +29,14 @@ if (isset($id)) {
                                     <div>Question:</div>
                                     <div><?php safer_echo($r["question"]); ?></div>
                                 </div> 
-                        </div>
-                    <?php endforeach; ?>
-                 </div>
-            <?php else: ?>
-                <p>No results</p>
-            <?php endif; ?>
-  <?php foreach ($results as $r): ?>
+                     <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                         <div>Answers:</div>
                                     <div><?php safer_echo($r["answer"]); ?></div>
                                 </div> 
-                       </div>
+                        </div>
                     <?php endforeach; ?>
-                </div>
+                 </div>
             <?php else: ?>
                 <p>No results</p>
             <?php endif; ?>
