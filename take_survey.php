@@ -59,7 +59,10 @@ if (isset($id)) {
                                         <div>Answers:</div>
                     <input type="radio" value="<?php echo $r["answer_id"];?>" name="answer"/><?php echo $r["answer"];?>
                                 </div> 
-		      
+		          </div>                  
+                                <div class="col">
+                                    <a type="button" href="list_questions.php?id=<?php safer_echo($r['id']); ?>">Questions</a>
+                      </div>
                         </div>
                     <?php endforeach; ?>
                  </div>
