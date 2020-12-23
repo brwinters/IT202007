@@ -15,17 +15,6 @@ if (isset($id)) {
     if (!$results) {
         $e = $stmt->errorInfo();
         flash($e[2]);
-	    if($r){
-		   flash("Successfully did Survey");
-   }
-	   else{
-		   flash("Problem getting answer " . var_export($stmt->errorINfo(), true));
-	   }
-	   }
-	   else{
-		   flash("Answer must not be empty and survey id must be passed in the url");
-	   }
-}
 ?>
     <h3>Take Survey</h3>
 <form method="POST" class="form-inline">
