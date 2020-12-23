@@ -43,4 +43,9 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
+
+<body>
+
+<h1>Display Radio Buttons</h1>
+
 <?php require(__DIR__ . "/partials/flash.php");
