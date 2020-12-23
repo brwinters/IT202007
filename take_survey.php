@@ -40,9 +40,9 @@ if (isset($id)) {
                                         <div>Answers:</div>
                                     <div><?php safer_echo($r["answer"]); ?></div>
                                 </div> 
-                        </div>
+                       </div>
                     <?php endforeach; ?>
-                 </div>
+                </div>
             <?php else: ?>
                 <p>No results</p>
             <?php endif; ?>
