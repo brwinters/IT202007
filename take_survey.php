@@ -27,7 +27,7 @@ if (isset($id)) {
                     <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                     <div>Question:</div>
-                                    <div><?php safer_echo($r["question"]); ?></div>
+                                    <div><?php safer_echo($r["question_id"]); ?></div>
                                 </div> 
                      <?php endforeach; ?>
                      <?php foreach ($results as $r): ?>
@@ -46,7 +46,7 @@ if (isset($id)) {
     </div>
 <body>
 	</form>
- <input type="submit" value=submit">
+ <input type="submit" value=submit>
 </form>
 <body>
 
