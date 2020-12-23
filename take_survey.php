@@ -15,6 +15,8 @@ if (isset($id)) {
     if (!$results) {
         $e = $stmt->errorInfo();
         flash($e[2]);
+    }
+}
 ?>
     <h3>Take Survey</h3>
 <form method="POST" class="form-inline">
