@@ -43,9 +43,22 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
+
 <html>
 <body>
 
-<h1>Display Radio Buttons</h1>
+
+  <p>Please select your one option:</p>
+  <input type="radio" id="answer.id" name="answer" value="30">
+  <label for="age1">Cake</label><br>
+  <input type="radio" id="answer.id" name="answer" value="60">
+  <label for="age2">Ice Cream</label><br>  
+  <input type="radio" id="answer.id" name="answer" value="100">
+  <label for="age3">Pie</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
 
 <?php require(__DIR__ . "/partials/flash.php");
