@@ -5,6 +5,9 @@ if (isset($_POST["submit"])) {
     $survey_id = $_GET["id"];
     $user_id = get_user_id();
     $params[":survey_id"] = $survey_id;
+	 $params[":question_id"] = $question_id;
+	 $params[":answer_id"] = $answer_id;
+	 $params[":user_id"] = $user_id;
     $query = "INSERT INTO F20_Responses (survey_id, question_id, answer_id, user_id) VALUES (:survey_id, :question_id, :answer_id, :user_id)";//ignore sql error hint
 
     $db = getDB();
