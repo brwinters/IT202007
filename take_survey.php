@@ -43,22 +43,16 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
-
-<html>
-<body>
-
-
-  <p>Please select your one option:</p>
-  <input type="radio" id="answer.id" name="answer" value="30">
-  <label for="age1">Cake</label><br>
-  <input type="radio" id="answer.id" name="answer" value="60">
-  <label for="age2">Ice Cream</label><br>  
-  <input type="radio" id="answer.id" name="answer" value="100">
-  <label for="age3">Pie</label><br><br>
-  <input type="submit" value="Submit">
-</form>
-
-</body>
-</html>
+if($r){
+		   flash("Successfully did Survey");
+   }
+	   else{
+		   flash("Problem getting answer " . var_export($stmt->errorINfo(), true));
+	   }
+	   }
+	   else{
+		   flash("Answer must not be empty and survey id must be passed in the url");
+	   }
+	   }
 
 <?php require(__DIR__ . "/partials/flash.php");
