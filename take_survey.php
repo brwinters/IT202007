@@ -9,7 +9,7 @@ if (isset($_GET["id"])) {
 $results = [];
 if (isset($id)) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT F20_Questions.id,question,answer FROM F20_Questions JOIN F20_Answers ON F20_Answers.question_id = F20_Questions.id WHERE survey_id = :id");
+    $stmt = $db->prepare("SELECT F20_Questions.id,F20_Answers.id,question,answer FROM F20_Questions JOIN F20_Answers ON F20_Answers.question_id = F20_Questions.id WHERE survey_id = :id");
     $r = $stmt->execute([":id" => $id]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (!$results) {
@@ -28,6 +28,17 @@ if (isset($id)) {
                         <div class="list-group-item">
                                     <div>Question:</div>
                                     <div><?php safer_echo($r["question"]); ?></div>
+                                </div> 
+                        </div>
+                    <?php endforeach; ?>
+                 </div>
+            <?php else: ?>
+                <p>No results</p>
+            <?php endif; ?>
+  <?php foreach ($results as $r): ?>
+                        <div class="list-group-item">
+                                        <div>Answers:</div>
+                                    <div><?php safer_echo($r["answer"]); ?></div>
                                 </div> 
                         </div>
                     <?php endforeach; ?>
