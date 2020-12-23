@@ -67,7 +67,7 @@ if (isset($id)) {
     </div>
 <body>
 	</form>
- <input type="submit" value=submit>
+ <input type="submit" value=submit name= "submit">
 </form>
 <body>
 
