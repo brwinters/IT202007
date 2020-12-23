@@ -4,9 +4,8 @@ if (isset($_POST["submit"])) {
     echo "<pre>" . var_export($_POST, true) . "</pre>";
     $survey_id = $_GET["id"];
     $user_id = get_user_id();
-    $params = [];
+    $params = [":survey_id"] = $survey_id;
     $query = "INSERT INTO F20_Responses (survey_id, question_id, answer_id, user_id) VALUES (:survey_id, :question_id, :answer_id, :user_id");//ignore sql error hint
-  $params[":survey_id"] = $survey_id;
 
     $db = getDB();
     $stmt = $db->prepare($query);
