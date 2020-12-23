@@ -43,7 +43,7 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
-
+<html>
 <body>
 
 <h1>Display Radio Buttons</h1>
