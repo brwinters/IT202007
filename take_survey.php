@@ -25,9 +25,6 @@ if (isset($id)) {
 	   else{
 		   flash("Answer must not be empty and survey id must be passed in the url");
 	   }
-	   }
-
-    }
 }
 ?>
     <h3>Take Survey</h3>
