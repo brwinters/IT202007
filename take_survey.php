@@ -34,7 +34,6 @@ if (isset($_POST["submit"])) {
     die(header("Location: " . getURL("surveys.php")));
 }
 ?>
-<input type="hidden" name="question_id" value="<?php echo $r["question_id"];?>"/>
 
 <?php
 if (isset($_GET["id"])) {
@@ -64,7 +63,7 @@ if (isset($id)) {
                     <?php foreach ($results as $r): ?>
                         <div class="list-group-item">
                                     <div>Question:</div>
-                                    <div><?php safer_echo($r["question"]); ?></div>
+                             <input type="hidden" name="question_id" value="<?php echo $r["question_id"];?>"/>
                                 </div> 
                      <?php endforeach; ?>
                      <?php foreach ($results as $r): ?>
