@@ -15,6 +15,18 @@ if (isset($id)) {
     if (!$results) {
         $e = $stmt->errorInfo();
         flash($e[2]);
+	    if($r){
+		   flash("Successfully did Survey");
+   }
+	   else{
+		   flash("Problem getting answer " . var_export($stmt->errorINfo(), true));
+	   }
+	   }
+	   else{
+		   flash("Answer must not be empty and survey id must be passed in the url");
+	   }
+	   }
+
     }
 }
 ?>
@@ -43,16 +55,10 @@ if (isset($id)) {
             <?php endif; ?>
         </div>
     </div>
-if($r){
-		   flash("Successfully did Survey");
-   }
-	   else{
-		   flash("Problem getting answer " . var_export($stmt->errorINfo(), true));
-	   }
-	   }
-	   else{
-		   flash("Answer must not be empty and survey id must be passed in the url");
-	   }
-	   }
+<form method="POST">
+<input type="radio" id="answer.id" name="answer"
+       <input type="submit" value="Submit">
+</form>
+
 
 <?php require(__DIR__ . "/partials/flash.php");
