@@ -55,7 +55,7 @@ if (isset($id)) {
     </div>
 <body>
 	</form>
- <input type="submit" value="answer.id">
+ <input type="submit" value=submit">
 </form>
 <body>
 
